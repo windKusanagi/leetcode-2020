@@ -21,10 +21,10 @@ var search = function(nums, target) {
   const pivot = left;  
   let start = 0, end = nums.length -1;
 
-  if (target > nums[pivot] && target <= nums[nums.length - 1]) {
-    start = pivot + 1;
+  if (target >= nums[pivot] && target <= nums[nums.length - 1]) {
+    start = pivot;
   } else {
-    end = pivot - 1;
+    end = pivot;
   }
 
   while(start <= end) {
@@ -37,13 +37,11 @@ var search = function(nums, target) {
       end = middle - 1;
     }
   }
-
   return -1;
-
 };
 
 
 console.log(search([4,5,6,7,0,2,3], 2));
 console.log(search([4,5,6,7,0,1,2], 3));
 console.log(search([4,5,6,7,0,1,2], 0));
-console.log(search([4,5,6,7,0,1,2], 0));
+console.log(search([1], 1));
