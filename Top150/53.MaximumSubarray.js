@@ -11,5 +11,7 @@ var maxSubArray = function(nums) {
       max = max_cur;
     }
   };
+
+  return max;
 };
 
